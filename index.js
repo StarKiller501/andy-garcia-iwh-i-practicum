@@ -32,8 +32,8 @@ app.get('/', async (req, res) => {
     // Renderizar plantilla homepage.pug
     const labels = {
         nombre: 'Name',
-        tipo_de_animal: 'Animal Type', // o 'Animal Type' si quieres en inglés; en español: 'Tipo de animal'
-        edad: 'Age'                // o 'Edad' si mantienes español; en el ejemplo ponen 'Price'
+        tipo_de_animal: 'Animal Type', 
+        edad: 'Age'                
         };
 
     res.render('homepage', {
@@ -75,7 +75,7 @@ app.post('/update-cobj', async (req, res) => {
     res.redirect('/');
   } catch (error) {
     console.error('Error POST /update-cobj:', error?.response?.data || error.message);
-    // Puedes redirigir con mensaje, aquí simplificamos:
+    
     res.status(500).send('Error al crear el registro del objeto personalizado.');
   }
 });
